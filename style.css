@@ -1,0 +1,290 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: system-ui, Arial, sans-serif;
+    color: #222;
+    background: #f7f7fb;
+}
+
+a {
+    color: #0b63c4;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+        height: 150px;
+    width: 100%;
+}
+
+
+/* ===== Layout ===== */
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6ee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: .5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-links a {
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.nav-links a:hover {
+    background: #eef4ff;
+}
+
+/* ===== Banner / Hero ===== */
+.hero {
+    position: relative;
+    background: #cfe3ff;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    filter: brightness(.85);
+}
+
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+
+.hero p {
+    color: #f0f4ff;
+    margin-top: 8px;
+}
+
+/* ===== Sections ===== */
+.section {
+    padding: 40px 0;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ececf6;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .04);
+}
+
+/* ===== Table ===== */
+.table-wrap {
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px; 
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead {
+    background: #0b63c4;
+    color: #fff;
+}
+
+th,
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+/* ===== Form ===== */
+form {
+    display: grid;
+    gap: 14px;
+}
+
+input,
+select,
+textarea,
+button {
+    padding: 10px 12px;
+    border: 1px solid #dfe3ee;
+    border-radius: 10px;
+    font: inherit;
+    background: #fff;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: #0b63c4;
+    color: #fff;
+    font-weight: 600;
+}
+
+button:hover {
+    filter: brightness(1.05);
+}
+
+/* ===== Gallery ===== */
+.gallery-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.figure {
+    background: #fff;
+    border: 1px solid #ececf6;
+    border-radius: 12px;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+}
+
+.figure figcaption {
+    padding: 10px;
+    font-size: .95rem;
+    color: #444;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: 40px;
+    background: #fff;
+    border-top: 1px solid #e6e6ee;
+}
+
+.footer-inner {
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social {
+    display: flex;
+    gap: 12px;
+}
+
+.social a {
+    padding: 6px 10px;
+    border: 1px solid #dfe3ee;
+    border-radius: 8px;
+}
+
+.social a:hover {
+    background: #eef4ff;
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 640px) {
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .hero img {
+        height: 260px;
+    }
+}
+.photo{
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.modal img {
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  animation: zoom .3s ease;
+}
+@keyframes zoom { from { transform:scale(0.8); } to { transform:scale(1); } }
+.hidden { display: none; }
+
+.nav-link.active {
+  background-color: #3f72af;
+  color: white;
+}
+
+.gallery img {
+  width: 150px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+#modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#closeModal {
+  float: right;
+  cursor: pointer;
+  font-size: 22px;
+  color: #555;
+}
